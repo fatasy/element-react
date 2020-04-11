@@ -13,8 +13,8 @@
     "jest": "jest",
     "lint": "eslint src libs site --quiet",
     "build": "cd build/site && webpack --progress",
-    "prepubl¡sh": "./build/scripts/prepare.sh",
-    "postpublish": "./build/scripts/release.sh"
+    "prepubl¡sh": "start ./build/scripts/prepare.sh",
+    "postpublish": "start ./build/scripts/release.sh"
   },
   "repository": {
     "type": "git",
