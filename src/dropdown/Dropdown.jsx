@@ -129,7 +129,7 @@ Dropdown.propTypes = {
   type: PropTypes.string,
   size: PropTypes.string,
   trigger: PropTypes.oneOf(['hover', 'click']),
-  menuAlign: PropTypes.oneOf(['start', 'end']),
+  menuAlign: PropTypes.oneOf(['start', 'end', 'center']),
   splitButton: PropTypes.bool,
   hideOnClick: PropTypes.bool,
   onClick: PropTypes.func,
@@ -140,7 +140,7 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   hideOnClick: true,
   trigger: 'hover',
-  menuAlign: 'end'
+  menuAlign: 'center'
 }
 
 export default ClickOutside(Dropdown);

@@ -208,7 +208,7 @@ Dropdown.propTypes = {
   type: _libs.PropTypes.string,
   size: _libs.PropTypes.string,
   trigger: _libs.PropTypes.oneOf(['hover', 'click']),
-  menuAlign: _libs.PropTypes.oneOf(['start', 'end']),
+  menuAlign: _libs.PropTypes.oneOf(['start', 'end', 'center']),
   splitButton: _libs.PropTypes.bool,
   hideOnClick: _libs.PropTypes.bool,
   onClick: _libs.PropTypes.func,
@@ -219,7 +219,7 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   hideOnClick: true,
   trigger: 'hover',
-  menuAlign: 'end'
+  menuAlign: 'center'
 };
 
 var _default = (0, _reactClickOutside2.default)(Dropdown);
