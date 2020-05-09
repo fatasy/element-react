@@ -516,7 +516,7 @@ var Select = function (_Component) {
   }, {
     key: 'iconClass',
     value: function iconClass() {
-      return this.showCloseIcon() ? 'circle-close' : this.props.remote && this.props.filterable ? '' : 'caret-top ' + (this.state.visible ? 'is-reverse' : '');
+      return this.showCloseIcon() ? 'circle-close' : this.props.remote && this.props.filterable ? '' : 'arrow-up ' + (this.state.visible ? 'is-reverse' : '');
     }
   }, {
     key: 'showCloseIcon',
