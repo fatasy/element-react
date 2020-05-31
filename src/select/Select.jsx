@@ -808,7 +808,7 @@ class Select extends Component {
   }
 
   render() {
-    const { multiple, size, disabled, filterable, loading } = this.props;
+    const { multiple, size, disabled, filterable, loading, prepend, append } = this.props;
     const { selected, inputWidth, inputLength, query, selectedLabel, visible, options, filteredOptionsCount, currentPlaceholder } = this.state;
 
     return (
@@ -898,6 +898,8 @@ class Select extends Component {
           disabled={disabled}
           readOnly={!filterable || multiple}
           icon={this.iconClass() || undefined}
+          prepend={prepend}
+          append={append}
           onChange={value => this.setState({ selectedLabel: value })}
           onIconClick={this.handleIconClick.bind(this)}
           onMouseDown={this.onMouseDown.bind(this)}
@@ -973,10 +975,17 @@ Select.propTypes = {
   filterMethod: PropTypes.func,
   multiple: PropTypes.bool,
   placeholder: PropTypes.string,
+  prepend: PropTypes.node,
+  append: PropTypes.node,
   onChange: PropTypes.func,
   onVisibleChange: PropTypes.func,
   onRemoveTag: PropTypes.func,
   onClear: PropTypes.func
+}
+
+Select.defaultProps = {
+  prepend: <React.Fragment></React.Fragment>,
+  append:  <React.Fragment></React.Fragment>,
 }
 
 export default ClickOutside(Select);

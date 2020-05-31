@@ -887,7 +887,9 @@ var Select = function (_Component) {
         size = _props7.size,
         disabled = _props7.disabled,
         filterable = _props7.filterable,
-        loading = _props7.loading;
+        loading = _props7.loading,
+        prepend = _props7.prepend,
+        append = _props7.append;
     var _state14 = this.state,
         selected = _state14.selected,
         inputWidth = _state14.inputWidth,
@@ -984,6 +986,8 @@ var Select = function (_Component) {
         disabled: disabled,
         readOnly: !filterable || multiple,
         icon: this.iconClass() || undefined,
+        prepend: prepend,
+        append: append,
         onChange: function onChange(value) {
           return _this10.setState({ selectedLabel: value });
         },
@@ -1076,10 +1080,17 @@ Select.propTypes = {
   filterMethod: PropTypes.func,
   multiple: PropTypes.bool,
   placeholder: PropTypes.string,
+  prepend: PropTypes.node,
+  append: PropTypes.node,
   onChange: PropTypes.func,
   onVisibleChange: PropTypes.func,
   onRemoveTag: PropTypes.func,
   onClear: PropTypes.func
+};
+
+Select.defaultProps = {
+  prepend: React.createElement(React.Fragment, null),
+  append: React.createElement(React.Fragment, null)
 };
 
 export default ClickOutside(Select);

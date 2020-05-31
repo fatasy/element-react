@@ -985,7 +985,9 @@ var Select = function (_Component) {
           size = _props7.size,
           disabled = _props7.disabled,
           filterable = _props7.filterable,
-          loading = _props7.loading;
+          loading = _props7.loading,
+          prepend = _props7.prepend,
+          append = _props7.append;
       var _state14 = this.state,
           selected = _state14.selected,
           inputWidth = _state14.inputWidth,
@@ -1082,6 +1084,8 @@ var Select = function (_Component) {
           disabled: disabled,
           readOnly: !filterable || multiple,
           icon: this.iconClass() || undefined,
+          prepend: prepend,
+          append: append,
           onChange: function onChange(value) {
             return _this10.setState({ selectedLabel: value });
           },
@@ -1181,10 +1185,17 @@ Select.propTypes = {
   filterMethod: _libs.PropTypes.func,
   multiple: _libs.PropTypes.bool,
   placeholder: _libs.PropTypes.string,
+  prepend: _libs.PropTypes.node,
+  append: _libs.PropTypes.node,
   onChange: _libs.PropTypes.func,
   onVisibleChange: _libs.PropTypes.func,
   onRemoveTag: _libs.PropTypes.func,
   onClear: _libs.PropTypes.func
+};
+
+Select.defaultProps = {
+  prepend: _react2.default.createElement(_react2.default.Fragment, null),
+  append: _react2.default.createElement(_react2.default.Fragment, null)
 };
 
 var _default = (0, _reactClickOutside2.default)(Select);
